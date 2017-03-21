@@ -12,8 +12,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.zadmin.relaxia.Common.Music;
 import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.R;
+import com.example.zadmin.relaxia.Utilities.Clock;
 import com.example.zadmin.relaxia.Utilities.FontLoader;
+import com.example.zadmin.relaxia.events.Event;
+import com.example.zadmin.relaxia.events.MemoryGameEvents.ui.BackGameEvent;
+import com.example.zadmin.relaxia.events.MemoryGameEvents.ui.NextGameEvent;
 
 /**
  * Created by zAdmin on 21/3/2017.
@@ -29,11 +35,11 @@ public class PopUpWonView extends RelativeLayout{
     private ImageView mBackButton;
     private Handler mHandler;
 
-    public PopupWonView(Context context) {
+    public PopUpWonView(Context context) {
             this(context, null);
         }
 
-    public PopupWonView(Context context, AttributeSet attrs) {
+    public PopUpWonView(Context context, AttributeSet attrs) {
             super(context, attrs);
             LayoutInflater.from(context).inflate(R.layout.popup_won_view, this, true);
             mTime = (TextView) findViewById(R.id.time_bar_text);
@@ -50,7 +56,7 @@ public class PopUpWonView extends RelativeLayout{
             mBackButton.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Shared.eventBus.notify(new BackGameEvent());
+                    Shared.eventBus.notify((Event) new BackGameEvent());
                 }
             });
 
@@ -141,7 +147,7 @@ public class PopUpWonView extends RelativeLayout{
         private void animateScoreAndTime(final int remainedSeconds, final int achievedScore) {
             final int totalAnimation = 1200;
 
-            Clock.getInstance().startTimer(totalAnimation, 35, new OnTimerCount() {
+            Clock.getInstance().startTimer(totalAnimation, 35, new Clock.OnTimerCount() {
 
                 @Override
                 public void onTick(long millisUntilFinished) {

@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.zadmin.relaxia.Common.Music;
 import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.R;
 import com.example.zadmin.relaxia.Utilities.FontLoader;
 
 /**
@@ -22,18 +24,18 @@ public class PopUpSettingsView extends LinearLayout{
         private ImageView mSoundImage;
         private TextView mSoundText;
 
-        public PopupSettingsView(Context context) {
+        public PopUpSettingsView(Context context) {
             this(context, null);
         }
 
-        public PopupSettingsView(Context context, AttributeSet attrs) {
+        public PopUpSettingsView(Context context, AttributeSet attrs) {
             super(context, attrs);
             setOrientation(LinearLayout.VERTICAL);
             setBackgroundResource(R.drawable.settings_popup);
             LayoutInflater.from(getContext()).inflate(R.layout.popup_settings_view, this, true);
             mSoundText = (TextView) findViewById(R.id.sound_off_text);
             TextView rateView = (TextView) findViewById(R.id.rate_text);
-            FontLoader.setTypeface(context, new TextView[] { mSoundText, rateView }, Font.GROBOLD);
+            FontLoader.setTypeface(context, new TextView[] { mSoundText, rateView }, FontLoader.Font.GROBOLD);
             mSoundImage = (ImageView) findViewById(R.id.sound_image);
             View soundOff = findViewById(R.id.sound_off);
             soundOff.setOnClickListener(new OnClickListener() {
