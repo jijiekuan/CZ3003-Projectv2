@@ -6,7 +6,7 @@ package com.example.zadmin.relaxia;
 
 import android.app.Application;
 
-import com.example.zadmin.relaxia.Utilities.FontLoader;
+import Utilities.FontLoader;
 
 public class GameApplication extends Application {
 

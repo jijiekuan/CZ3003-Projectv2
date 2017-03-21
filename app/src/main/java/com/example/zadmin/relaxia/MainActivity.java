@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.example.zadmin.relaxia.Common.Shared;
-import com.example.zadmin.relaxia.Engine.ScreenController;
-import com.example.zadmin.relaxia.Utilities.Utils;
+import Common.Shared;
+import Engine.ScreenController;
+import Utilities.Utils;
 
 public class MainActivity extends FragmentActivity {
 
@@ -19,7 +19,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         Shared.context = getApplicationContext();
-        Shared.engine = com.example.zadmin.relaxia.Engine.getInstance();
+        Shared.engine = Engine.getInstance();
         Shared.eventBus = EventBus.getInstance();
 
         setContentView(R.layout.activity_main);
