@@ -145,6 +145,9 @@ public class Engine implements EventObserverMemoryGame, EventObserverPictureToWo
 
     @Override
     public void onEvent(ThemeSelectedEvent event) {
+
+        Log.i("EventBusClass", "Enter themeSelected event");
+
         mSelectedTheme = event.theme;
         mScreenController.openScreen(ScreenController.Screen.DIFFICULTY);
         AsyncTask<Void, Void, TransitionDrawable> task = new AsyncTask<Void, Void, TransitionDrawable>() {
@@ -297,15 +300,15 @@ public class Engine implements EventObserverMemoryGame, EventObserverPictureToWo
 
     @Override
     public void onEvent(Event event) {
-        /*Log.i("EventBusClass", "Enter main onEvent method");
+        Log.i("EventBusClass", "Enter main onEvent method");
         if(event instanceof StartEvent){
             Log.i("EventBusClass", "new StartEvent");
             onEvent(new StartEvent());
         }
         else if(event instanceof ThemeSelectedEvent){
-            Log.i("EventBusClass", "new StartEvent");
-            onEvent(new ThemeSelectedEvent());
-        }*/
-
+            Log.i("EventBusClass", "new ThemeSelectedEvent");
+            Theme temp = ((ThemeSelectedEvent) event).theme;
+            onEvent(new ThemeSelectedEvent(temp));
+        }
     }
 }

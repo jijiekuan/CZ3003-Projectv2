@@ -18,7 +18,7 @@ public class ThemeSelectedEvent extends AbstractEvent {
 
     @Override
     protected void fire(EventObserver eventObserver) {
-        eventObserver.onEvent((ThemeSelectedEvent)this);
+        eventObserver.onEvent(this);
     }
 
     @Override

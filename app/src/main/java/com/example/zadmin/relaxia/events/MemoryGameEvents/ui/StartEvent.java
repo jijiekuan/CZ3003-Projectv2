@@ -14,7 +14,7 @@ public class StartEvent extends AbstractEvent {
     @Override
     protected void fire(EventObserver eventObserver) {
         Log.i("EventBusClass", "Start event Fired");
-        eventObserver.onEvent((StartEvent)this);
+        eventObserver.onEvent(this);
     }
 
     @Override
