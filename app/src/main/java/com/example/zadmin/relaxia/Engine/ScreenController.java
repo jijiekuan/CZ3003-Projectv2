@@ -1,22 +1,17 @@
-package Engine;
+package com.example.zadmin.relaxia.Engine;
 
 /**
  * Created by zAdmin on 21/3/2017.
  */
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import com.example.zadmin.relaxia.Common.Shared;
 
-import com.snatik.matches.R;
-import com.snatik.matches.common.Shared;
-import com.snatik.matches.events.ui.ResetBackgroundEvent;
-import com.snatik.matches.fragments.DifficultySelectFragment;
-import com.snatik.matches.fragments.GameFragment;
-import com.snatik.matches.fragments.MenuFragment;
-import com.snatik.matches.fragments.ThemeSelectFragment;
 
 public class ScreenController {
 

@@ -1,4 +1,4 @@
-package UI.MemoryGameUI;
+package com.example.zadmin.relaxia.UI.MemoryGameUI;
 
 /**
  * Created by zAdmin on 21/3/2017.
@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Utilities.Utils;
+import com.example.zadmin.relaxia.Utilities.Utils;
 
 
 public class BoardView extends LinearLayout {

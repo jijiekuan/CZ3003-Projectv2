@@ -1,4 +1,4 @@
-package Utilities;
+package com.example.zadmin.relaxia.Utilities;
 
 /**
  * Created by zAdmin on 21/3/2017.

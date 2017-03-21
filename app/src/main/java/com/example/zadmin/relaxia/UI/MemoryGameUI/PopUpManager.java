@@ -1,4 +1,4 @@
-package UI.MemoryGameUI;
+package com.example.zadmin.relaxia.UI.MemoryGameUI;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -11,7 +11,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import Common.Shared;
+import com.example.zadmin.relaxia.Common.Shared;
 
 /**
  * Created by zAdmin on 21/3/2017.

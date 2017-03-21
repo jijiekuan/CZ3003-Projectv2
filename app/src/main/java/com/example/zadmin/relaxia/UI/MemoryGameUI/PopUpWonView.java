@@ -1,4 +1,4 @@
-package UI.MemoryGameUI;
+package com.example.zadmin.relaxia.UI.MemoryGameUI;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -12,7 +12,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import Utilities.FontLoader;
+import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.Utilities.FontLoader;
 
 /**
  * Created by zAdmin on 21/3/2017.
@@ -42,7 +43,7 @@ public class PopUpWonView extends RelativeLayout{
             mStar3 = (ImageView) findViewById(R.id.star_3);
             mBackButton = (ImageView) findViewById(R.id.button_back);
             mNextButton = (ImageView) findViewById(R.id.button_next);
-            FontLoader.setTypeface(context, new TextView[] { mTime, mScore }, Font.GROBOLD);
+            FontLoader.setTypeface(context, new TextView[] { mTime, mScore }, FontLoader.Font.GROBOLD);
             setBackgroundResource(R.drawable.level_complete);
             mHandler = new Handler();
 

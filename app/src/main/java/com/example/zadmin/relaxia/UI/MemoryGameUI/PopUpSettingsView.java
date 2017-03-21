@@ -1,4 +1,4 @@
-package UI.MemoryGameUI;
+package com.example.zadmin.relaxia.UI.MemoryGameUI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import Common.Shared;
-import Utilities.FontLoader;
+import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.Utilities.FontLoader;
 
 /**
  * Created by zAdmin on 21/3/2017.

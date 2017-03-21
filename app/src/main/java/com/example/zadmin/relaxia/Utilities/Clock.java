@@ -1,4 +1,4 @@
-package Utilities;
+package com.example.zadmin.relaxia.Utilities;
 
 import android.util.Log;
 

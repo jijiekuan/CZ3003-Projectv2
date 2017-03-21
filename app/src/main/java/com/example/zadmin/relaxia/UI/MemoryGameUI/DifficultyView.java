@@ -1,4 +1,4 @@
-package UI.MemoryGameUI;
+package com.example.zadmin.relaxia.UI.MemoryGameUI;
 
 /**
  * Created by zAdmin on 21/3/2017.
@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import java.util.Locale;
 
-import Common.Shared;
+import com.example.zadmin.relaxia.Common.Shared;
 
 
 public class DifficultyView extends LinearLayout {

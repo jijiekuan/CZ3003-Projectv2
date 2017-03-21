@@ -1,4 +1,4 @@
-package Common;
+package com.example.zadmin.relaxia.Common;
 
 /**
  * Created by zAdmin on 21/3/2017.
