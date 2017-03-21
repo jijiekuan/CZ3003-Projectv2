@@ -1,16 +1,16 @@
-package Events.MemoryGame.UI;
+package UI.MemoryGameUI;
 
 /**
  * Created by zAdmin on 21/3/2017.
  */
-
-import java.util.Locale;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import java.util.Locale;
 
 import Common.Shared;
 

@@ -1,4 +1,4 @@
-package Events.MemoryGame.UI;
+package UI.MemoryGameUI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -36,7 +36,7 @@ public class PopUpSettingsView extends LinearLayout{
             FontLoader.setTypeface(context, new TextView[] { mSoundText, rateView }, Font.GROBOLD);
             mSoundImage = (ImageView) findViewById(R.id.sound_image);
             View soundOff = findViewById(R.id.sound_off);
-            soundOff.setOnClickListener(new View.OnClickListener() {
+            soundOff.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Music.OFF = !Music.OFF;
@@ -44,7 +44,7 @@ public class PopUpSettingsView extends LinearLayout{
                 }
             });
             View rate = findViewById(R.id.rate);
-            rate.setOnClickListener(new View.OnClickListener() {
+            rate.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     final String appPackageName = Shared.context.getPackageName();

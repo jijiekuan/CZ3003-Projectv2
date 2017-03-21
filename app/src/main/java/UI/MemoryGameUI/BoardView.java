@@ -1,13 +1,8 @@
-package Events.MemoryGame.UI;
+package UI.MemoryGameUI;
 
 /**
  * Created by zAdmin on 21/3/2017.
  */
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -24,13 +19,18 @@ import android.view.ViewGroup;
 import android.view.animation.BounceInterpolator;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import Utilities.Utils;
 
 
 public class BoardView extends LinearLayout {
 
-    private LinearLayout.LayoutParams mRowLayoutParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-    private LinearLayout.LayoutParams mTileLayoutParams;
+    private LayoutParams mRowLayoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    private LayoutParams mTileLayoutParams;
     private int mScreenWidth;
     private int mScreenHeight;
     private BoardConfiguration mBoardConfiguration;
@@ -80,7 +80,7 @@ public class BoardView extends LinearLayout {
         int tilesWidth = (mScreenWidth - sumMargin) / mBoardConfiguration.numTilesInRow;
         mSize = Math.min(tilesHeight, tilesWidth);
 
-        mTileLayoutParams = new LinearLayout.LayoutParams(mSize, mSize);
+        mTileLayoutParams = new LayoutParams(mSize, mSize);
         mTileLayoutParams.setMargins(singleMargin, singleMargin, singleMargin, singleMargin);
 
         // build the ui
@@ -135,7 +135,7 @@ public class BoardView extends LinearLayout {
             }
         }.execute();
 
-        tileView.setOnClickListener(new View.OnClickListener() {
+        tileView.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {

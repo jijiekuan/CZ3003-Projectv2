@@ -1,4 +1,4 @@
-package Events.MemoryGame.UI;
+package UI.MemoryGameUI;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -11,6 +11,8 @@ import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import Utilities.FontLoader;
 
 /**
  * Created by zAdmin on 21/3/2017.
@@ -44,14 +46,14 @@ public class PopUpWonView extends RelativeLayout{
             setBackgroundResource(R.drawable.level_complete);
             mHandler = new Handler();
 
-            mBackButton.setOnClickListener(new View.OnClickListener() {
+            mBackButton.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Shared.eventBus.notify(new BackGameEvent());
                 }
             });
 
-            mNextButton.setOnClickListener(new View.OnClickListener() {
+            mNextButton.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Shared.eventBus.notify(new NextGameEvent());
