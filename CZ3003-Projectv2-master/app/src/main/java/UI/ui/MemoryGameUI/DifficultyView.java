@@ -1,4 +1,4 @@
-package Events.MemoryGame.UI;
+package UI.ui.MemoryGameUI;
 
 /**
  * Created by zAdmin on 21/3/2017.

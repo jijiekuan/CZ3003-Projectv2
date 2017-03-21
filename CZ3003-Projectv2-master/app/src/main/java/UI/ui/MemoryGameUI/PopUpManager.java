@@ -1,4 +1,4 @@
-package Events.MemoryGame.UI;
+package UI.ui.MemoryGameUI;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
