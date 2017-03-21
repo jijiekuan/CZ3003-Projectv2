@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import java.util.Locale;
 
 import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.R;
 
 
 public class DifficultyView extends LinearLayout {
@@ -25,7 +26,7 @@ public class DifficultyView extends LinearLayout {
 
     public DifficultyView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater.from(context).inflate(R.layout.difficult_view, this, true);
+        LayoutInflater.from(context).inflate(R.layout.mg_difficult_view, this, true);
         setOrientation(LinearLayout.VERTICAL);
         mTitle = (ImageView) findViewById(R.id.title);
     }

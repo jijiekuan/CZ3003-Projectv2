@@ -24,7 +24,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.Models.MemoryGame.BoardArrangment;
+import com.example.zadmin.relaxia.Models.MemoryGame.BoardConfiguration;
+import com.example.zadmin.relaxia.Models.MemoryGame.Game;
+import com.example.zadmin.relaxia.R;
 import com.example.zadmin.relaxia.Utilities.Utils;
+import com.example.zadmin.relaxia.events.MemoryGameEvents.ui.FlipCardEvent;
 
 
 public class BoardView extends LinearLayout {
@@ -62,12 +68,12 @@ public class BoardView extends LinearLayout {
     }
 
     public static BoardView fromXml(Context context, ViewGroup parent) {
-        return (BoardView) LayoutInflater.from(context).inflate(R.layout.board_view, parent, false);
+        return (BoardView) LayoutInflater.from(context).inflate(R.layout.mg_board_view, parent, false);
     }
 
-    public void setBoard(MemoryGame memorygame) {
-        mBoardConfiguration = memorygame.boardConfiguration;
-        mBoardArrangment = memorygame.boardArrangment;
+    public void setBoard(Game game) {
+        mBoardConfiguration = game.boardConfiguration;
+        mBoardArrangment = game.boardArrangment;
         // calc prefered tiles in width and height
         int singleMargin = getResources().getDimensionPixelSize(R.dimen.card_margin);
         float density = getResources().getDisplayMetrics().density;

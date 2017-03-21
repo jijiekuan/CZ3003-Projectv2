@@ -8,6 +8,15 @@ import com.example.zadmin.relaxia.events.EventObserver;
  */
 
 public class DifficultySelectedEvent extends AbstractEvent {
+    public static final String TYPE = BackGameEvent.class.getName();
+
+    public final int difficulty;
+
+    public DifficultySelectedEvent(int difficulty) {
+        this.difficulty = difficulty;
+    }
+
+
     @Override
     protected void fire(EventObserver eventObserver) {
         eventObserver.onEvent(this);
@@ -15,6 +24,6 @@ public class DifficultySelectedEvent extends AbstractEvent {
 
     @Override
     public String getType() {
-        return null;
+        return TYPE;
     }
 }

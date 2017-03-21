@@ -11,6 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.Fragments.MemoryGameFragments.DifficultySelectFragment;
+import com.example.zadmin.relaxia.Fragments.MemoryGameFragments.MemoryGameFragment;
+import com.example.zadmin.relaxia.Fragments.MemoryGameFragments.MenuFragment;
+import com.example.zadmin.relaxia.Fragments.MemoryGameFragments.ThemeSelectFragment;
+import com.example.zadmin.relaxia.R;
+import com.example.zadmin.relaxia.events.MemoryGameEvents.ui.ResetBackgroundEvent;
 
 
 public class ScreenController {
@@ -38,12 +44,13 @@ public class ScreenController {
         THEME_SELECT
     }
 
+
     public static Screen getLastScreen() {
         return openedScreens.get(openedScreens.size() - 1);
     }
 
     public void openScreen(Screen screen) {
-        mFragmentManager = Shared.activity.getSupportFragmentManager();
+        mFragmentManager = Shared.activity.getFragmentManager();
 
         if (screen == Screen.MEMORYGAME && openedScreens.get(openedScreens.size() - 1) == Screen.MEMORYGAME) {
             openedScreens.remove(openedScreens.size() - 1);
@@ -69,7 +76,7 @@ public class ScreenController {
             openedScreens.remove(openedScreens.size() - 1);
             openScreen(screen);
             if ((screen == Screen.THEME_SELECT || screen == Screen.MENU) &&
-                    (screenToRemove == Screen.DIFFICULTY || screenToRemove == Screen.GAME)) {
+                    (screenToRemove == Screen.DIFFICULTY || screenToRemove == Screen.MEMORYGAME)) {
                 Shared.eventBus.notify(new ResetBackgroundEvent());
             }
             return false;
@@ -86,9 +93,9 @@ public class ScreenController {
             case MEMORYGAME:
                 return new MemoryGameFragment();
             case CONNECTDOTS:
-                return new ConnectDotsFragment();
+                //return new ConnectDotsFragment();
             case PIC2WORDS:
-                return new Pic2WordsFragment();
+                //return new Pic2WordsFragment();
             case THEME_SELECT:
                 return new ThemeSelectFragment();
             default:

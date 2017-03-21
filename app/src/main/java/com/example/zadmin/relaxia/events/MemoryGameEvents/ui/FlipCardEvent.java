@@ -8,6 +8,13 @@ import com.example.zadmin.relaxia.events.EventObserver;
  */
 
 public class FlipCardEvent extends AbstractEvent {
+    public static final String TYPE = FlipCardEvent.class.getName();
+
+    public final int id;
+
+    public FlipCardEvent(int id) {
+        this.id = id;
+    }
     @Override
     protected void fire(EventObserver eventObserver) {
         eventObserver.onEvent(this);
@@ -15,6 +22,6 @@ public class FlipCardEvent extends AbstractEvent {
 
     @Override
     public String getType() {
-        return null;
+        return TYPE;
     }
 }

@@ -1,5 +1,7 @@
 package com.example.zadmin.relaxia.events.MemoryGameEvents.ui;
 
+import android.util.Log;
+
 import com.example.zadmin.relaxia.events.AbstractEvent;
 import com.example.zadmin.relaxia.events.EventObserver;
 
@@ -8,13 +10,15 @@ import com.example.zadmin.relaxia.events.EventObserver;
  */
 
 public class StartEvent extends AbstractEvent {
+    public static final String TYPE = NextGameEvent.class.getName();
     @Override
     protected void fire(EventObserver eventObserver) {
-        eventObserver.onEvent(this);
+        Log.i("EventBusClass", "Start event Fired");
+        eventObserver.onEvent((StartEvent)this);
     }
 
     @Override
     public String getType() {
-        return null;
+        return TYPE;
     }
 }

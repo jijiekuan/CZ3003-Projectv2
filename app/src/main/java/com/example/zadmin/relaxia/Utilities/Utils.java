@@ -1,16 +1,13 @@
 package com.example.zadmin.relaxia.Utilities;
 
-/**
- * Created by zAdmin on 21/3/2017.
- */
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.media.ThumbnailUtils;
 
-import com.snatik.matches.common.Shared;
+import com.example.zadmin.relaxia.Common.Shared;
+
 
 public class Utils {
 

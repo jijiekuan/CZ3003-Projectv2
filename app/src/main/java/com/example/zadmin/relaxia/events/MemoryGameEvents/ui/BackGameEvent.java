@@ -8,6 +8,8 @@ import com.example.zadmin.relaxia.events.EventObserver;
  */
 
 public class BackGameEvent extends AbstractEvent {
+    public static final String TYPE = BackGameEvent.class.getName();
+
     @Override
     protected void fire(EventObserver eventObserver) {
         eventObserver.onEvent(this);
@@ -15,6 +17,7 @@ public class BackGameEvent extends AbstractEvent {
 
     @Override
     public String getType() {
-        return null;
+        return TYPE;
     }
+
 }

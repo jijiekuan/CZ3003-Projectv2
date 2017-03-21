@@ -7,14 +7,11 @@ import java.util.List;
 import java.util.Map;
 
 import android.os.Handler;
+import android.util.Log;
 
-/**
- * The gateway of all com.example.zadmin.relaxia.events running in the game from ui to engine components
- * and back.
- *
- * @author sromku
- */
 public class EventBus {
+
+    private static final String TAG = "EventBusClass";
 
     private Handler mHandler;
     private static EventBus mInstance = null;
@@ -26,6 +23,7 @@ public class EventBus {
     }
 
     public static EventBus getInstance() {
+        Log.i(TAG, "Eventbus created");
         if (mInstance == null) {
             mInstance = new EventBus();
         }
@@ -33,6 +31,7 @@ public class EventBus {
     }
 
     synchronized public void listen(String eventType, EventObserver eventObserver) {
+        Log.i(TAG, "Eventbus listen");
         List<EventObserver> observers = events.get(eventType);
         if (observers == null) {
             observers = Collections.synchronizedList(new ArrayList<EventObserver>());
@@ -49,10 +48,12 @@ public class EventBus {
     }
 
     public void notify(Event event) {
+        Log.i(TAG, "Inside notify method");
         synchronized (obj) {
             List<EventObserver> observers = events.get(event.getType()); //get this list of EventObservers of event type
             if (observers != null) {
                 for (EventObserver observer : observers) {
+                    Log.i(TAG, "Firing method:");
                     AbstractEvent abstractEvent = (AbstractEvent) event; //downcasting! Event is an interface
                     abstractEvent.fire(observer);
                 }

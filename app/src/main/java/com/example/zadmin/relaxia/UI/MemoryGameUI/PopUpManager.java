@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.Models.MemoryGame.GameState;
+import com.example.zadmin.relaxia.R;
 
 /**
  * Created by zAdmin on 21/3/2017.
@@ -30,7 +32,7 @@ public class PopUpManager {
             popupContainer.addView(imageView);
 
             // popup
-            PopupSettingsView popupSettingsView = new PopupSettingsView(Shared.context);
+            PopUpSettingsView popupSettingsView = new PopUpSettingsView(Shared.context);
             int width = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_settings_width);
             int height = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_settings_height);
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width, height);
@@ -53,7 +55,7 @@ public class PopUpManager {
             popupContainer.removeAllViews();
 
             // popup
-            PopupWonView popupWonView = new PopupWonView(Shared.context);
+            PopUpWonView popupWonView = new PopUpWonView(Shared.context);
             popupWonView.setGameState(gameState);
             int width = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_won_width);
             int height = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_won_height);

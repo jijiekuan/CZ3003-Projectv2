@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.example.zadmin.relaxia.Common.Shared;
+import com.example.zadmin.relaxia.Engine.Engine;
 import com.example.zadmin.relaxia.Engine.ScreenController;
+import com.example.zadmin.relaxia.UI.MemoryGameUI.PopUpManager;
 import com.example.zadmin.relaxia.Utilities.Utils;
+import com.example.zadmin.relaxia.events.EventBus;
+import com.example.zadmin.relaxia.events.MemoryGameEvents.ui.BackGameEvent;
 
 public class MainActivity extends FragmentActivity {
 
@@ -19,7 +23,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         Shared.context = getApplicationContext();
-        Shared.engine = com.example.zadmin.relaxia.Engine.getInstance();
+        Shared.engine = Engine.getInstance();
         Shared.eventBus = EventBus.getInstance();
 
         setContentView(R.layout.activity_main);
@@ -33,7 +37,7 @@ public class MainActivity extends FragmentActivity {
         setBackgroundImage();
 
         // set menu
-        ScreenController.getInstance().openScreen(Screen.MENU);
+        ScreenController.getInstance().openScreen(ScreenController.Screen.MENU);
     }
 
     @Override
@@ -44,9 +48,9 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     public void onBackPressed() {
-        if (PopupManager.isShown()) {
-            PopupManager.closePopup();
-            if (ScreenController.getLastScreen() == Screen.GAME) {
+        if (PopUpManager.isShown()) {
+            PopUpManager.closePopup();
+            if (ScreenController.getLastScreen() == ScreenController.Screen.MEMORYGAME) {
                 Shared.eventBus.notify(new BackGameEvent());
             }
         } else if (ScreenController.getInstance().onBack()) {

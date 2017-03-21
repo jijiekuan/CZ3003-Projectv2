@@ -1,5 +1,6 @@
 package com.example.zadmin.relaxia.events.MemoryGameEvents.ui;
 
+import com.example.zadmin.relaxia.Models.MemoryGame.Theme.Theme;
 import com.example.zadmin.relaxia.events.AbstractEvent;
 import com.example.zadmin.relaxia.events.EventObserver;
 
@@ -8,13 +9,20 @@ import com.example.zadmin.relaxia.events.EventObserver;
  */
 
 public class ThemeSelectedEvent extends AbstractEvent {
+    public static final String TYPE = NextGameEvent.class.getName();
+    public final Theme theme;
+
+    public ThemeSelectedEvent(Theme theme) {
+        this.theme = theme;
+    }
+
     @Override
     protected void fire(EventObserver eventObserver) {
-        eventObserver.onEvent(this);
+        eventObserver.onEvent((ThemeSelectedEvent)this);
     }
 
     @Override
     public String getType() {
-        return null;
+        return TYPE;
     }
 }
