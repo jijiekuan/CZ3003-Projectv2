@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Relaxia</string>
+    <string name="play_memory_game">Play Memory Game</string>
+    <string name="play_connect_the_dots">Play Connect the dots!</string>
+    <string name="picture_to_words">Play Picture to words!</string>
+    <string name="memory_game_data">Memory Game Data</string>
+    <string name="view_data_scores">View data scores</string>
+</resources>
